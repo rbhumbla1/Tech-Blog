@@ -32,7 +32,6 @@
      width: 100%;
      margin-top: 75px;
      margin-bottom: 50px;
-     =
  }
  
  .form-inline {
@@ -99,7 +98,7 @@
      border-top: black !important;
  }
  
- h5 {
+ h5, h3 {
      color: rgb(55, 224, 247);
  }
  
@@ -152,10 +151,10 @@
      margin-left: 10px;
  }
  
- a {
+ /* a {
      color: white !important;
      text-decoration: none !important;
- }
+ } */
  
  .noteItem {
      display: flex;

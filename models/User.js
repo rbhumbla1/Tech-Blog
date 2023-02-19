@@ -38,11 +38,13 @@ User.init(
   },
   {
     hooks: {
-      beforeCreate: async (newUserData) => {
+      // beforeCreate: async (newUserData) => {
+        beforeCreate: async function (newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      beforeUpdate: async (updatedUserData) => {
+      // beforeUpdate: async (updatedUserData) => {
+        beforeUpdate: async function (updatedUserData) {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
