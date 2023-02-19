@@ -1,0 +1,197 @@
+/* route http://localhost:3001/api/budgets/goals */
+
+* {
+    margin: .5; 
+ }
+ 
+ 
+ :root {
+     --fontcolor: #37e0f7;
+ }
+ 
+ h1 {
+     color: var(--fontcolor);
+     font-family: rockwell;
+ }
+ 
+ h2 {
+     margin: 5px;
+ }
+ 
+ .navbar {
+     z-index: 1;
+     display: flex;
+     top: 0;
+     width: 100%;
+ }
+ 
+ .nav {
+ 
+     position: fixed;
+     top: 0;
+     width: 100%;
+     margin-top: 75px;
+     margin-bottom: 50px;
+     =
+ }
+ 
+ .form-inline {
+     margin: 5px;
+ }
+ 
+ .parent {
+     margin-top: 75px;
+     margin-bottom: 50px;
+     display: grid;
+     grid-template-columns: auto auto;
+ 
+ }
+ 
+ .container {
+     margin-top: 75px;
+     margin-bottom: 50px;
+ }
+ 
+ .chart {
+     color: var(--fontcolor);
+     font-weight: 250;
+     border: solid rgb(210, 210, 210);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     text-align: center;
+     padding: 10px;
+ 
+ }
+ 
+ .chart-inputs {
+     text-align: left;
+ }
+ 
+ .goals {
+     color: black;
+     font-weight: 250;
+     border: solid rgb(210, 210, 210);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     padding: 10px;
+     text-align: center;
+ }
+ 
+ table {
+     justify-content: center;
+ }
+ .goal-button {
+     text-align: start;
+ }
+ 
+ .bottom-nav {
+     margin: 0%;
+     overflow: hidden;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     background-color: var(--fontcolor);
+     color: white;
+     text-align: center;
+ 
+ }
+ 
+ pre {
+     margin-top: 30px !important;
+     border-top: black !important;
+ }
+ 
+ h5 {
+     color: rgb(55, 224, 247);
+ }
+ 
+ h7 {
+     font-size: 10px;
+ }
+ 
+ .navbar {
+     position: fixed;
+     color: white;
+     background-color: rgb(116, 219, 233);
+     border-radius: 5px;
+ 
+ }
+ 
+ #title {
+     margin-top: 50px;
+ }
+ 
+ #budgetly {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-weight: bolder;
+ }
+ 
+ .btn-outline-secondary {
+     color: white !important;
+     border-color: white !important;
+     border-radius: 10px;
+ }
+ 
+ #test {
+     border: 1px, black, solid;
+ }
+ 
+ 
+ .expenseItem {
+     opacity: 0.8;
+     margin-bottom: 5px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .expenseList {
+     list-style: none;
+     display: flex;
+     justify-content: space-between !important;
+     margin-bottom: 0px !important;
+     margin-left: 10px;
+ }
+ 
+ a {
+     color: white !important;
+     text-decoration: none !important;
+ }
+ 
+ .noteItem {
+     display: flex;
+     justify-content: center !important;
+ }
+ 
+ ul {
+     margin-bottom: none;
+     margin-right: 110px;
+ }
+ 
+ p {
+     margin-bottom: none;
+ }
+ 
+ #catNav {
+     margin-left: 100px;
+ }
+ 
+ #expenseNav {
+     font-weight: 700;
+     color: rgb(112, 106, 106);
+ }
+ 
+ #currentDay {
+     color: rgb(55, 224, 247) !important;
+ }
+ /* 
+ @media (max-width: 1050px) {
+     .parent {
+         margin-top: 75px;
+         margin-bottom: 50px;
+         display: grid;
+         grid-template-columns: auto;
+ 
+     } */
+ /*     
+ } */
+ 
