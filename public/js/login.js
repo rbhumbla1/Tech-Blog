@@ -21,7 +21,7 @@ const loginHandler = async (e) => {
 
     if (response.ok) {
       //go to the dashboard when a user logs in
-      document.location.replace('/api/budgets/goals');
+      document.location.replace('/dashboard');
     } else {
       incorrect.innerHTML = 'Incorrect Email/Password';
     }
@@ -31,6 +31,14 @@ const loginHandler = async (e) => {
 
 
 formLogin.addEventListener('submit', loginHandler);
+
+const home1 = document.getElementById("home-button")
+
+home1.addEventListener("click", async () => {
+console.log("home")
+  document.location.replace('/');
+
+})
 
 
 

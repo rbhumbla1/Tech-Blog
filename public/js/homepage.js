@@ -1,5 +1,6 @@
-const logIn = document.querySelector(".loginbtn")
+const logIn = document.getElementById("login-button")
 const create = document.querySelector(".createbtn")
+const dashboard = document.getElementById("dashboard-button")
 
 
 logIn.addEventListener("click", ()=> {
@@ -9,3 +10,10 @@ logIn.addEventListener("click", ()=> {
 create.addEventListener("click",()=> {
     document.location.replace("/signup")
 })
+
+
+// dashboard.addEventListener("click", () => {
+//     console.log("dashboard clicked")
+//   document.location.replace('/dashboard');
+
+// })

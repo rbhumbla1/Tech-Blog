@@ -24,3 +24,12 @@ home.addEventListener("click", async () => {
   document.location.replace('/');
 
 })
+
+// //Clicking on Expense button in nav bar will take the user to expense page
+const dashboard1 = document.getElementById("dashboard-button")
+
+dashboard1.addEventListener("click", async () => {
+console.log("dashboard1")
+  document.location.replace('/dashboard');
+
+})
