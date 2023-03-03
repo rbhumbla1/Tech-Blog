@@ -1,5 +1,5 @@
 const formLogin = document.getElementById('form-login');
-const createBtn = document.querySelector('.create-account');
+const signupLink = document.getElementById('signup-link');
 const incorrect = document.getElementById('incorrect');
 
 
@@ -21,21 +21,26 @@ const loginHandler = async (e) => {
 
     if (response.ok) {
       //go to the dashboard when a user logs in
-      document.location.replace('/dashboard');
+      document.location.replace('/api/blogs/dashboard');
     } else {
       incorrect.innerHTML = 'Incorrect Email/Password';
     }
   }
 
 };
-
-
 formLogin.addEventListener('submit', loginHandler);
+
+const signupHandler = async () => {
+
+  document.location.replace('/signup');
+
+}
+signupLink.addEventListener('click', signupHandler);
+
 
 const home1 = document.getElementById("home-button")
 
 home1.addEventListener("click", async () => {
-console.log("home")
   document.location.replace('/');
 
 })

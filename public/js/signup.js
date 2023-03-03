@@ -17,7 +17,7 @@ const signupForm = async (e) => {
   };
 
   if (inputs) {
-    const response = await fetch('/api/users/', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'Application/json',
@@ -27,16 +27,7 @@ const signupForm = async (e) => {
 
     if (response.ok) {
 
-
-      // 30-39 conflict merge here (-Adena):
-      //document.location.replace('/api/expenses/spending');
-      document.location.replace('/api/budgets/goals');
-
-        //NEEDS FIX,
-        // WHEN SUBMIT CLICKED, IT SHOULD GO STRAIGHT TO PROFILE, INSTEAD IT GOES TO LOG IN PAGE
-
-      //go to expense page when a new user signs up to capture their major expenses.
-      document.location.replace('/expenses');
+      document.location.replace('/api/blogs/dashboard');
 
     } else {
       alert(response.statusText);
@@ -45,4 +36,18 @@ const signupForm = async (e) => {
 };
 
 formCreate.addEventListener('submit', signupForm);
+
+const home2 = document.getElementById("home-button")
+
+home2.addEventListener("click", async () => {
+  document.location.replace('/');
+
+})
+
+const login1 = document.getElementById("login-button")
+
+login1.addEventListener("click", async () => {
+  document.location.replace('/login');
+
+})
 

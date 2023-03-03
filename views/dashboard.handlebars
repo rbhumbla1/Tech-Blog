@@ -1,9 +1,17 @@
 <div class='welcome-page'>
   <div class='welcome-container'>
-    <h3><b>Hi {{username}}!</b> Welcome to your blog dashboard!</h3>
+
+    <div class=" row p-5">
+      <div class="col-8">
+        <h3><b>Hi {{username}}!</b> Welcome to your blog dashboard!</h3>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-outline-primary goal-button" type="button" id="new-blog-button">+ Create Blog</button>
+      </div>
+    </div>
 
     <div class='blogs p-5 col-sm-12 col-md-6 col-lg-9'>
-
+      <p>Click on a blog to update or delete.</p>
       {{#each blogs as |Blog|}}
       <br>
       <div class="card">
@@ -20,6 +28,8 @@
       {{/each}}
     </div>
 
+
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -29,6 +39,6 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
-   <script src='/js/main.js'></script>
+
   <script src='/js/dashboard.js'></script>
   <script src='/js/logout.js'></script>

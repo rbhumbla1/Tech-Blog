@@ -3,11 +3,27 @@
 * {
     margin: .5; 
  }
- 
+
  
  :root {
      --fontcolor: #37e0f7;
  }
+
+ body {
+    margin: 0;
+}
+
+main {
+
+    color: rgb(55, 224, 247);
+    font-family: rockwell;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 70vh;
+}
  
  h1 {
      color: var(--fontcolor);
@@ -98,7 +114,7 @@
      border-top: black !important;
  }
  
- h5, h3 {
+ h5, h3, p, a  {
      color: rgb(55, 224, 247);
  }
  
@@ -128,6 +144,14 @@
      border-color: white !important;
      border-radius: 10px;
  }
+
+ .btn-outline-primary {
+
+    color: white !important;
+    background-color: rgb(116, 219, 233) !important;    ;
+    border-color: rgb(116, 219, 233) !important;
+    border-radius: 10px;
+}
  
  #test {
      border: 1px, black, solid;
@@ -168,6 +192,7 @@
  
  p {
      margin-bottom: none;
+     margin-right: 100px;
  }
  
  #catNav {
@@ -182,6 +207,37 @@
  #currentDay {
      color: rgb(55, 224, 247) !important;
  }
+
+
+
+
+.login-box {
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    height: auto;
+    width: 30vw;
+    padding: 1.5rem;
+    z-index: 2;
+}
+
+.blog-box {
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    height: auto;
+    width: 50vw;
+    padding: 1.5rem;
+    z-index: 2;
+}
+ 
+ 
+img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170%;
+    z-index: 1;
+}
  /* 
  @media (max-width: 1050px) {
      .parent {
