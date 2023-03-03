@@ -22,7 +22,7 @@ main {
     justify-content:center;
     flex-wrap: wrap;
     gap: 20px;
-    height: 70vh;
+    height: 100vh;
 }
  
  h1 {
