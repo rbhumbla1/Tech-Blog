@@ -18,7 +18,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const username = user.name;
 
-       res.render('dashboard', {
+      res.render('dashboard', {
       username,
       ...user,
       logged_in: true
@@ -69,7 +69,7 @@ router.post('/create-blog', withAuth, async (req, res) => {
   }
 });
 
-//Post Route to update a blog
+//Put Route to update a blog
 router.put('/update-blog', withAuth, async(req, res) => {
     console.log("*******update-blog", req.body);
  try {
@@ -81,7 +81,7 @@ router.put('/update-blog', withAuth, async(req, res) => {
       }) 
  
      if (!blogData) {
-       res.status(404).json({ message: 'New blog creation failed' });
+       res.status(404).json({ message: 'Blog update failed' });
        return;
      }
      console.log("###############update-blog", blogData);
@@ -110,7 +110,44 @@ router.put('/update-blog', withAuth, async(req, res) => {
 });
 
 
+//Delete Route to delete a blog
+router.delete('/delete-blog', withAuth, async(req, res) => {
+  console.log("*******delete-blog", req.body);
+try {
+  const blogData = await Blog.destroy({
+      where: {
+        id: req.body.id,
+      }
+    }) 
 
+   if (!blogData) {
+     res.status(404).json({ message: 'Blog deletion failed' });
+     return;
+   }
+   console.log("###############delete-blog", blogData);
+   res.status(200).json(blogData);
+
+   // Find the logged in user based on the session  to get all the blogs to refresh the display
+ const userData = await User.findByPk(req.session.user_id, {
+     attributes: { exclude: ['password'] },
+     include: [{ model: Blog }],
+   });
+
+   const user = userData.get({ plain: true });
+    console.log("####create", user);
+
+ const username = user.name;
+
+    res.render('dashboard', {
+   username,
+   ...user,
+   logged_in: true
+ });
+
+} catch (err) {
+ res.status(500).json(err);
+}
+});
 
 
 

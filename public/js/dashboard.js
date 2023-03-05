@@ -12,6 +12,7 @@ cardEls.forEach((card) => {
 });
 
 
+
 //Home button click
 const home = document.getElementById("home-button")
 

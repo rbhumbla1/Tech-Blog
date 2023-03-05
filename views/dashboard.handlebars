@@ -2,7 +2,7 @@
 
   <div class="row p-5">
     <div class="col-8">
-      <h3><b>Hi {{username}}!</b> Welcome to your blog dashboard!</h3>
+      <h3><b>Hi {{username}}!</b> Welcome to your Tech Blog dashboard!</h3>
     </div>
     <div class="col-4">
       <button class="btn btn-outline-primary goal-button" type="button" id="new-blog-button">+ Create Blog</button>
@@ -10,7 +10,7 @@
   </div>
 
   <div class='blogs p-5 col-sm-12 col-md-6 col-lg-9'>
-    <p>Click on a blog to update or delete.</p>
+    <p>📌 Use "Create Blog" button to create new blogs.  For existing blogs, click on a blog to update or delete.</p>
     {{#each blogs as |Blog|}}
     <br>
     <div class="card" id="blog-card" label="{{Blog.id}}">
