@@ -117,7 +117,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
  // console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 1 ", commentData)
   const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-      //  console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 2 ", comments);
+    console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 2 ", comments);
         
   if (comments) {
     res.render('comment', {

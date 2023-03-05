@@ -1,39 +1,47 @@
-<div class="container d-flex justify-content-center">
-
+<div class="container-fluid d-flex justify-content-around">
     <div class="blog-box">
         <div class='welcome-div'>
             <h1>Read and Comment</h1>
         </div>
-
-        <div class="card" id="blog-card" label="{{blog.id}}">
-            <div class="card-header d-flex justify-content-between">
-                <b>{{blog.title}}</b>
-                <span class="fs-6">-posted by {{blog.user.name}} on {{format_time blog.date_created}}</span>
-            </div>
-            <div class="card-body">
-                <p class="card-text">{{blog.content}}</p>
-                <a href="#" class="card-text"></a>
+        <div class="'row">
+            <div class="card" id="blog-card" label="{{blog.id}}">
+                <div class="card-header d-flex justify-content-between">
+                    <b>{{blog.title}}</b>
+                    <span class="fs-6">-posted by {{blog.user.name}} on {{format_time blog.date_created}}</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{blog.content}}</p>
+                    <a href="#" class="card-text"></a>
+                </div>
             </div>
         </div>
-        <div id="comment-section">
+        <br>
+        <div  id="comment-section">
             {{#if hasComments}}
-            <p>add existing comments here</p>
+            {{#each comments as |comment|}}
+            <div class="d-flex justify-content-center align-items-between">
+                <p>{{comment.content}}</p>
+                <p> <br> - by {{comment.user.name}} on {{format_time comment.date_created}}</p>
+            </div>
+            
+            {{/each}}
             {{else}}
-            <p>no ocmments</p>
+            <p>Please add your comment below.</p>
             {{/if}}
         </div>
-        <div class='form-container'>
-            <form id='comment-form'>
-                <div class='form-group'>
-                    <label for='content'>Comment</label>
-                    <textarea class='form-control' id='com-content' rows="6"></textarea>
-                </div>
-                <br>
-                <button type='submit' class='btn btn-outline-primary goal-button' id="save-comment-button"
-                    label="{{blog.id}}">Save</button>
-            </form>
+        <div class="row">
+            <div class='form-container'>
+                <form id='comment-form'>
+                    <div class='form-group'>
+                        <label for='content'>Comment</label>
+                        <textarea class='form-control' id='com-content' rows="3"></textarea>
+                    </div>
+                    <br>
+                    <button type='submit' class='btn btn-outline-primary goal-button' id="save-comment-button"
+                        label="{{blog.id}}">Save</button>
+                </form>
+            </div>
         </div>
-
     </div>
 
 </div>
