@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -103,9 +103,9 @@ router.get('/comment/:id', withAuth, async (req, res) => {
 
   //check if this blog has comments.  If so, display them
   const commentData = await Comment.findAll({
-    where: { blog_id: req.body.blog_id },
+    where: { blog_id: req.params.id },
 
-    attributes: ['id', 'title', 'content', 'date_created'],
+    attributes: ['id', 'content', 'date_created'],
     include: [
       {
         model: User,
@@ -114,8 +114,11 @@ router.get('/comment/:id', withAuth, async (req, res) => {
     ],
   });
 
-  const comments = commentData.get({ plain: true });
+ // console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 1 ", commentData)
+  const comments = commentData.map((comment) => comment.get({ plain: true }));
 
+      //  console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 2 ", comments);
+        
   if (comments) {
     res.render('comment', {
       logged_in: req.session.logged_in,

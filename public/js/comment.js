@@ -1,11 +1,11 @@
 //save the comment
-const saveBtn = docuemnt.getElementById("save-comment-button");
+const formComment = document.getElementById("comment-form");
 
-const saveComment = async (e) => { //async
+const saveComment =  async(e) => { //async
     e.preventDefault();
 
     const blogID = document.getElementById('save-comment-button').getAttribute("label");
-    const comment = document.getElementById('comment-comment').ariaValueMax.trim();
+    const comment = document.getElementById('com-content').value.trim();
 
     const inputs = {
         content: comment,
@@ -15,7 +15,7 @@ const saveComment = async (e) => { //async
     console.log("###", inputs);
 
     if (inputs) {
-        const response = await fetch('/api/comment', { //await
+        const response =  await fetch('/api/comments/', { //await
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',
@@ -25,7 +25,7 @@ const saveComment = async (e) => { //async
 
         if (response.ok) {
 
-            document.location.replace('/api/comment/'+ blogID);
+            document.location.replace('/comment/'+ blogID);
 
         } else {
             alert(response.statusText);
@@ -33,15 +33,15 @@ const saveComment = async (e) => { //async
     }
 };
 
-if (saveBtn)
-    saveBtn.addEventListener('submit', saveComment);
+
+    formComment.addEventListener('submit', saveComment);
 
 
 
 //home button click
-const home = document.getElementById("home-button")
+const home1 = document.getElementById("home-button")
 
-home.addEventListener("click", async () => {
+home1.addEventListener("click", async () => {
     document.location.replace('/');
 
 })
