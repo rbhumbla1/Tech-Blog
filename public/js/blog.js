@@ -1,6 +1,5 @@
-//form submit
+//form submit to create new blog
 const formBlog = document.getElementById('form-blog');
-
 
 const blogForm = async (e) => {
   e.preventDefault();
@@ -32,7 +31,86 @@ const blogForm = async (e) => {
   }
 };
 
-formBlog.addEventListener('submit', blogForm);
+if(formBlog)  
+  formBlog.addEventListener('submit', blogForm);
+
+//form submit to create update a  blog
+const formUpdate = document.getElementById('form-blog-update');
+
+const blogUpdate =  async (e) => { //async
+  e.preventDefault();
+
+  const title = document.getElementById('blog-title').value.trim();
+  const content = document.getElementById('blog-content').value.trim();
+  const blogID = document.getElementById('update-blog-button').getAttribute("label");
+
+  
+  const inputs = {
+    title: title,
+    content: content,
+    id: blogID
+  };
+
+  console.log("###", inputs);
+
+  if (inputs) {
+    const response =  await fetch('/api/blogs/update-blog', { //await
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify(inputs),
+    });
+
+    if (response.ok) {
+
+      document.location.replace('/api/blogs/dashboard');
+
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+if(formUpdate)
+  formUpdate.addEventListener('submit', blogUpdate);
+
+  //form submit to create update a  blog
+const delButton = document.getElementById('delete-blog-button');
+
+const blogDelete =  async (e) => { //async
+  e.preventDefault();
+
+  const blogID = document.getElementById('delete-blog-button').getAttribute("label");
+
+  
+  const inputs = {
+    id: blogID
+  };
+
+  console.log("###", inputs);
+
+  if (inputs) {
+    const response =  await fetch('/api/blogs/delete-blog', { //await
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify(inputs),
+    });
+
+    if (response.ok) {
+
+      document.location.replace('/api/blogs/dashboard');
+
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+if(delButton)
+  delButton.addEventListener('click', blogDelete);
 
 
 //home button click

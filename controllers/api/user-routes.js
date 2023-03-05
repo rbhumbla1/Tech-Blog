@@ -40,6 +40,8 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
+      req.session.create_blog = true;
+      req.session.blog_id = 0;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });

@@ -59,9 +59,28 @@ router.get('/dashboard', (req, res) => {
   res.render('login');
 });
 
+//get blog create page
 router.get('/blog', withAuth, (req, res) => {
   res.render('blog', {
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      create_blog: true
+    });
+});
+
+//get blog update page
+router.get('/blog/:id', withAuth, async(req, res) => {
+  
+
+  const blogData = await Blog.findByPk(req.params.id, {
+    attributes: ['id','title','content']
+  });
+  const blog = blogData.get({ plain: true })
+
+  //console.log("####################UPPDATE ORUTE", req.params.id, blog)
+  res.render('blog', {
+      logged_in: req.session.logged_in,
+      create_blog: false,
+      blog
     });
 });
 

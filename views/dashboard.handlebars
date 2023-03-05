@@ -13,7 +13,7 @@
     <p>Click on a blog to update or delete.</p>
     {{#each blogs as |Blog|}}
     <br>
-    <div class="card">
+    <div class="card" id="blog-card" label="{{Blog.id}}">
       <div class="card-header d-flex justify-content-between">
         <b>{{Blog.title}}</b>
         <span class="fs-6">-posted on {{format_time Blog.date_created}}</span>
