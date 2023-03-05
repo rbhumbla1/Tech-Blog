@@ -75,7 +75,7 @@ const blogUpdate =  async (e) => { //async
 if(formUpdate)
   formUpdate.addEventListener('submit', blogUpdate);
 
-  //form submit to create update a  blog
+  //form submit to  update a  blog
 const delButton = document.getElementById('delete-blog-button');
 
 const blogDelete =  async (e) => { //async
