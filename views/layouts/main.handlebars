@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <div class="nav">
+    {{!-- <div class="nav"> --}}
       <nav class="navbar navbar-light" id="navbar">
         <h2 id="budgetly">Tech Blog</h2>
         <form class="form-inline">
@@ -25,10 +25,14 @@
           {{/if}}
         </form>
       </nav>
-    </div>
+    {{!-- </div> --}}
   </header>
-  <main>
+  <main >
+    <div class="grid-container fluid">
+      <div class="grid-x grid-margin-x">
     {{{body}}}
+    </div>
+    </div>
   </main>
 
   {{#if loggedIn}}

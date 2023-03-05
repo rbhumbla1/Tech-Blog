@@ -1,7 +1,7 @@
 //form submit to create new blog
 const formBlog = document.getElementById('form-blog');
 
-const blogForm = async (e) => {
+const blogCreate = async (e) => {
   e.preventDefault();
 
   const title = document.getElementById('blog-title').value.trim();
@@ -32,9 +32,9 @@ const blogForm = async (e) => {
 };
 
 if(formBlog)  
-  formBlog.addEventListener('submit', blogForm);
+  formBlog.addEventListener('submit', blogCreate);
 
-//form submit to create update a  blog
+//form submit to update a  blog
 const formUpdate = document.getElementById('form-blog-update');
 
 const blogUpdate =  async (e) => { //async

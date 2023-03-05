@@ -47,23 +47,6 @@ router.post('/create-blog', withAuth, async (req, res) => {
   
       res.status(200).json(newBlog);
 
-      // Find the logged in user based on the session  to get all the blogs to refresh the display
-    const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Blog }],
-      });
-  
-      const user = userData.get({ plain: true });
-       //console.log("####create", user);
-
-    const username = user.name;
-
-       res.render('dashboard', {
-      username,
-      ...user,
-      logged_in: true
-    });
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -87,23 +70,6 @@ router.put('/update-blog', withAuth, async(req, res) => {
      console.log("###############update-blog", blogData);
      res.status(200).json(blogData);
 
-     // Find the logged in user based on the session  to get all the blogs to refresh the display
-   const userData = await User.findByPk(req.session.user_id, {
-       attributes: { exclude: ['password'] },
-       include: [{ model: Blog }],
-     });
- 
-     const user = userData.get({ plain: true });
-      console.log("####create", user);
-
-   const username = user.name;
-
-      res.render('dashboard', {
-     username,
-     ...user,
-     logged_in: true
-   });
-
  } catch (err) {
    res.status(500).json(err);
  }
@@ -126,23 +92,6 @@ try {
    }
    console.log("###############delete-blog", blogData);
    res.status(200).json(blogData);
-
-   // Find the logged in user based on the session  to get all the blogs to refresh the display
- const userData = await User.findByPk(req.session.user_id, {
-     attributes: { exclude: ['password'] },
-     include: [{ model: Blog }],
-   });
-
-   const user = userData.get({ plain: true });
-    console.log("####create", user);
-
- const username = user.name;
-
-    res.render('dashboard', {
-   username,
-   ...user,
-   logged_in: true
- });
 
 } catch (err) {
  res.status(500).json(err);
