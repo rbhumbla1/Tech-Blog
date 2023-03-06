@@ -1,20 +1,20 @@
 [
     {
         "id": "1",
-        "title": "TEST",
-        "content": "This is a test.",
+        "title": "Importance of MVC",
+        "content": "MVC allows users to maintain true separatin of concerns.  The code is divided between the Model layer(for data), the View layer(for design) and the COntroller layer(for application logic)",
         "owner_id": "1"
     },
     {
         "id": "2",
-        "title": "TEST 2 ",
-        "content": "This is a test 2.",
+        "title": "Authentication vs. Authorization",
+        "content": "Authentication means confirming your identity whereas authorization means being allowed access to the system.",
         "owner_id": "2"
     },
     {
         "id": "3",
-        "title": "TEST 3",
-        "content": "This is a test 3.",
+        "title": "Object-Relational Mapping",
+        "content": "ORM simplies the way queries are created in SQL.",
         "owner_id": "3"
     }
 ]

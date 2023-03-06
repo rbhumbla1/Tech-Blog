@@ -1,25 +1,25 @@
 [
     {
         "id": "1",
-        "content": "This is a comment for test 1",
+        "content": "I use MVC all the time in my projects.",
         "owner_id": "1",
         "blog_id": "1"
     },
     {
         "id": "2",
-        "content": "This is a another comment for test 1",
+        "content": "Yes, it makes our life easier",
         "owner_id": "2",
         "blog_id": "1"
     },
     {
         "id": "3",
-        "content": "This is a comment for test 2",
+        "content": "Authentication is when you sign in and authorizing is when you create your account?",
         "owner_id": "3",
         "blog_id": "2"
     },
     {
         "id": "4",
-        "content": "This is a comment for test 3",
+        "content": "We are learning ORM too!",
         "owner_id": "2",
         "blog_id": "3"
     }
