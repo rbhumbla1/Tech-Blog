@@ -54,7 +54,7 @@ router.post('/create-blog', withAuth, async (req, res) => {
 
 //Put Route to update a blog
 router.put('/update-blog', withAuth, async(req, res) => {
-    console.log("*******update-blog", req.body);
+    //console.log("*******update-blog", req.body);
  try {
     const blogData = await Blog.update({ title: req.body.title, content: req.body.content}, {
         where: {
@@ -67,7 +67,7 @@ router.put('/update-blog', withAuth, async(req, res) => {
        res.status(404).json({ message: 'Blog update failed' });
        return;
      }
-     console.log("###############update-blog", blogData);
+     //console.log("###############update-blog", blogData);
      res.status(200).json(blogData);
 
  } catch (err) {
@@ -78,7 +78,7 @@ router.put('/update-blog', withAuth, async(req, res) => {
 
 //Delete Route to delete a blog
 router.delete('/delete-blog', withAuth, async(req, res) => {
-  console.log("*******delete-blog", req.body);
+  //console.log("*******delete-blog", req.body);
 try {
   const blogData = await Blog.destroy({
       where: {
@@ -90,7 +90,7 @@ try {
      res.status(404).json({ message: 'Blog deletion failed' });
      return;
    }
-   console.log("###############delete-blog", blogData);
+   //console.log("###############delete-blog", blogData);
    res.status(200).json(blogData);
 
 } catch (err) {

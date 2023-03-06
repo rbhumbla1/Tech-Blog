@@ -1,4 +1,4 @@
-//form submit to create new blog
+//***********form submit to create new blog
 const formBlog = document.getElementById('form-blog');
 
 const blogCreate = async (e) => {
@@ -34,7 +34,7 @@ const blogCreate = async (e) => {
 if(formBlog)  
   formBlog.addEventListener('submit', blogCreate);
 
-//form submit to update a  blog
+//***********form submit to update a  blog
 const formUpdate = document.getElementById('form-blog-update');
 
 const blogUpdate =  async (e) => { //async
@@ -75,7 +75,7 @@ const blogUpdate =  async (e) => { //async
 if(formUpdate)
   formUpdate.addEventListener('submit', blogUpdate);
 
-  //form submit to  update a  blog
+  //***********form submit to  update a  blog
 const delButton = document.getElementById('delete-blog-button');
 
 const blogDelete =  async (e) => { //async
@@ -113,7 +113,7 @@ if(delButton)
   delButton.addEventListener('click', blogDelete);
 
 
-//home button click
+//***********home button click
 const home = document.getElementById("home-button")
 
 home.addEventListener("click", async () => {
@@ -121,7 +121,7 @@ home.addEventListener("click", async () => {
 
 })
 
-//dashboard button click
+//***********dashboard button click
 const dashboard = document.getElementById("dashboard-button")
 
 dashboard.addEventListener("click", async() => {

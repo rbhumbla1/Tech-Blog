@@ -1,4 +1,4 @@
-//Click on any card in the homepage
+//***********Click on any card in the homepage
 cardEls = document.querySelectorAll("#blog-card");
 
 cardEls.forEach((card) => {
@@ -12,7 +12,7 @@ cardEls.forEach((card) => {
 });
 
 
-//click on Login Button
+//***********click on Login Button
 const logIn = document.getElementById("login-button")
 if(logIn !== null){
 logIn.addEventListener("click", async()=> {
@@ -20,7 +20,7 @@ logIn.addEventListener("click", async()=> {
 })
 }
 
-//click on dashboard button
+//***********click on dashboard button
 const dashboard = document.getElementById("dashboard-button")
 dashboard.addEventListener("click", async() => {
     console.log("dashboard clicked")

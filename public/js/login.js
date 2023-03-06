@@ -3,7 +3,7 @@ const signupLink = document.getElementById('signup-link');
 const incorrect = document.getElementById('incorrect');
 
 
-
+//***********click on Login button
 const loginHandler = async (e) => {
   e.preventDefault();
 
@@ -30,6 +30,7 @@ const loginHandler = async (e) => {
 };
 formLogin.addEventListener('submit', loginHandler);
 
+//***********click on signup link
 const signupHandler = async () => {
 
   document.location.replace('/signup');
@@ -38,6 +39,7 @@ const signupHandler = async () => {
 signupLink.addEventListener('click', signupHandler);
 
 
+//***********click on home button
 const home1 = document.getElementById("home-button")
 
 home1.addEventListener("click", async () => {

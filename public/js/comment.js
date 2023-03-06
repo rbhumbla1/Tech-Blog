@@ -1,4 +1,4 @@
-//save the comment
+//***********save the comment
 const formComment = document.getElementById("comment-form");
 
 const saveComment =  async(e) => { //async
@@ -38,7 +38,7 @@ const saveComment =  async(e) => { //async
 
 
 
-//home button click
+//***********home button click
 const home1 = document.getElementById("home-button")
 
 home1.addEventListener("click", async () => {
@@ -46,7 +46,7 @@ home1.addEventListener("click", async () => {
 
 })
 
-//dashboard button click
+//***********dashboard button click
 const dashboard = document.getElementById("dashboard-button")
 
 dashboard.addEventListener("click", async () => {

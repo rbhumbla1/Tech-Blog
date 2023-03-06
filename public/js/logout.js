@@ -1,6 +1,6 @@
 const logOut = document.getElementById("logout-button")
 
-
+//***********click on logout button
 if(logOut !== null){
 logOut.addEventListener("click", async () => {
   const response = await fetch("/api/users/logout", {

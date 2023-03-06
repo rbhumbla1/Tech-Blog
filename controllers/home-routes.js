@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//homepage route
 router.get('/', async (req, res) => {
   // console.log("&&&&& HOMEPAGE", req.session);
   try {
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+//login route - go to dahsboard of the user
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -39,6 +40,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+//signup route - go to dahsboard of the user
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -49,6 +51,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+//clickon dashboard button route
 router.get('/dashboard', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -99,7 +102,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
   });
   const blog = blogData.get({ plain: true })
 
-  console.log("####################COMMENT ORUTE", req.params.id, blog)
+  //console.log("####################COMMENT ORUTE", req.params.id, blog)
 
   //check if this blog has comments.  If so, display them
   const commentData = await Comment.findAll({
@@ -117,8 +120,9 @@ router.get('/comment/:id', withAuth, async (req, res) => {
  // console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 1 ", commentData)
   const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 2 ", comments);
+   // console.log("&&&&&&&&&&&&&&&&&&&&&&&&& 2 ", comments);
         
+   //If the blog has comments, display them
   if (comments) {
     res.render('comment', {
       logged_in: req.session.logged_in,

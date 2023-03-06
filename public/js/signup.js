@@ -1,6 +1,6 @@
 const formCreate = document.getElementById('form-create');
 
-
+//***********click on sigup button
 const signupForm = async (e) => {
   e.preventDefault();
   const firstName = document.getElementById('firstname-input').value.trim();
@@ -37,6 +37,7 @@ const signupForm = async (e) => {
 
 formCreate.addEventListener('submit', signupForm);
 
+//***********click on home button
 const home2 = document.getElementById("home-button")
 
 home2.addEventListener("click", async () => {
@@ -44,6 +45,7 @@ home2.addEventListener("click", async () => {
 
 })
 
+//***********click on Login button
 const login1 = document.getElementById("login-button")
 
 login1.addEventListener("click", async () => {
