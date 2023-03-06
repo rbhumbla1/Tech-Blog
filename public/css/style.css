@@ -1,4 +1,4 @@
-/* route http://localhost:3001/api/budgets/goals */
+
 
 * {
     margin: .5;
@@ -17,15 +17,15 @@ body {
 }
 
 main {
-
     color: var(--fontcolor);
     font-family: rockwell;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     height: 100vh;
+    margin-left: 100px;
 }
 
 h1 {
@@ -37,22 +37,6 @@ h2 {
     margin: 5px;
 }
 
-/* .navbar {
-    z-index: 1;
-    display: flex; 
-    top: 0;
-    width: 100%;
-    position:fixed;
-}
-
-.nav {
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-top: 75px;
-    margin-bottom: 50px;
-} */
 
 .form-inline {
     margin: 5px;
@@ -71,27 +55,6 @@ h2 {
     margin-bottom: 50px;
 }
 
-/*.goal-button {
-    text-align: start;
-}
-
- .bottom-nav {
-    margin: 0%;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--fontcolor);
-    color: white;
-    text-align: center;
-
-}
-
-pre {
-    margin-top: 30px !important;
-    border-top: black !important;
-} */
-
 h5,
 h3,
 p,
@@ -99,9 +62,6 @@ a {
     color: var(--fontcolor);
 }
 
-h7 {
-    font-size: 10px;
-}
 
 .navbar {
     z-index: 1;
@@ -144,8 +104,18 @@ h7 {
 .blog-box {
     background-color: white;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    height: 90vh;
+    height: 80vh;
     width: 70vw;
     padding: 1.5rem;
     z-index: 2;
+}
+
+.blog-container {
+    height: 70vh;
+}
+
+.home-container {
+    height: 80vh;
+    width: 80vw;
+    padding: 2rem;
 }
